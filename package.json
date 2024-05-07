@@ -1,11 +1,11 @@
 {
-  "name": "ce-tottodiscord",
-  "version": "1.0.0",
-  "description": "link log from TotAdmin to discord",
+  "name": "ce-CustomSudoWebhook",
+  "version": "0.0.1",
+  "description": "link log from >Sudo to Discord",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-rr": "node ./bin/www"
+    "start-dev": "node ./bin/www"
   },
   "author": "Virprince",
   "license": "ISC",

@@ -12,9 +12,9 @@ const fs = require("fs");
 exports.getEventConfig = function(req) {
     const {eventId,params} = req.query;
     let configs= [];
-
+    
     // no particular configuration for this eventId, return default
-    if (!eventId in config.eventId){
+    if (!(eventId in config.eventId)){
         return [config.eventId.default];
     }
     
@@ -87,7 +87,9 @@ exports.postMessage =  function(req, configs) {
  * @returns {*}
  */
 const getLogMessage =  function(req, config) {
-    const {charName, eventId, eventType, eventCategory, params} = req.query;
+    const {charName, eventId, eventType, eventCategory, params, date, steamId, actName} = req.query;
+    const fullCharName = actName !== charName ? "(" + charName + ")" : "";
+
     let message = config.message;
     
     message = message
@@ -96,6 +98,10 @@ const getLogMessage =  function(req, config) {
         .replace("[[eventType]]", eventType)
         .replace("[[eventCategory]]", eventCategory)
         .replace("[[params]]", params)
+        .replace("[[date]]", date)
+        .replace("[[steamId]]", steamId)
+        .replace("[[actName]]", actName)
+        .replace("[[fullCharName]]", fullCharName)
     ;
     
     return message;
@@ -108,6 +114,7 @@ const getLogMessage =  function(req, config) {
  * @param config
  */
 const logToFile = function(req, config ) {
+    
     // get the log message
     let message = getLogMessage(req, config);
     // get the root log file name
@@ -122,9 +129,11 @@ const logToFile = function(req, config ) {
     
     // get the full path of the log file
     const logFilePath = path.resolve(path.join(__dirname, '../../logs/' + logFileName));
-    
+
+    // get the date from the query to add before the message 
+    const logDate = req.query.date;
     // add date to the message
-    const logMessage = `${now.toISOString()} - ${message}\n`;
+    const logMessage = `${logDate} - ${message}\n`;
 
     // write the message to the log file
     fs.appendFile(logFilePath, logMessage, (err) => {

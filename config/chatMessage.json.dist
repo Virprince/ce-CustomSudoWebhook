@@ -1,5 +1,5 @@
 {
   "discord": {
-    "webhook": "YOUR_WEBHOOK_URL",
+    "webhook": "YOUR_WEBHOOK_URL"
   }
 }
