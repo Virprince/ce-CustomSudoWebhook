@@ -1,0 +1,67 @@
+{
+  "eventId": {
+    "default": {
+      "logInFile": {
+        "enabled": false,
+        "fileName": "default_log",
+        "message": "[[charName]] - [[eventCategory]] - [[eventId]] - [[eventType]] =>  [[params]]"
+      },
+      "discord": [
+        {
+          "webhook": "YOUR_WEBHOOK_URL",
+          "message": "[[charName]] - [[eventCategory]] - [[eventId]] - [[eventType]] =>  [[params]]"
+        }
+      ]
+    },
+    "RR_ABILITY_USE": {
+      "logInFile": {
+        "enabled": true,
+        "fileName": "RR_ABILITY_USE",
+        "message": "[[charName]] - [[eventCategory]] - [[eventId]] - [[eventType]] =>  [[params]]"
+      },
+      "default": {
+        "discord": [
+          {
+            "webhook": "YOUR_WEBHOOK_URL",
+            "message": "[[charName]] - [[eventCategory]] - [[eventId]] - [[eventType]] =>  [[params]]"
+          }
+        ]
+      },
+      "watched abilities": {
+        "find": [
+          "Logged Ability Name",
+          "Another Logged Ability Name",
+        ],
+        "discord": [
+          {
+            "webhook": "YOUR_WEBHOOK_URL",
+            "message": "@everyone :warning: [[charName]] - [[eventCategory]] - [[eventId]] - [[eventType]] =>  [[params]]"
+          }
+        ]
+      }
+    },
+    "FlowChartLog" : {
+      "logInFile": {
+        "enabled": true,
+        "fileName": "FlowChartLog"
+      },
+      "default": {
+        "discord": [
+          {
+            "webhook": "YOUR_WEBHOOK_URL",
+            "message": "[[charName]] - [[eventCategory]] - [[eventId]] - [[eventType]] =>  [[params]]"
+          }
+        ]
+      },
+      "log_key":{
+        "include": "[LOG]",
+        "discord": [
+          {
+            "webhook": "YOUR_WEBHOOK_URL",
+            "message": ":crossed_swords: ${params}"
+          }
+        ]
+      }
+    }
+  }
+}
