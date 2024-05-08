@@ -43,7 +43,8 @@
     "FlowChartLog" : {
       "logInFile": {
         "enabled": true,
-        "fileName": "FlowChartLog"
+        "fileName": "FlowChartLog",
+        "message": "[[eventId]] - [[steamId]] => [[params]]"
       },
       "default": {
         "discord": [
@@ -58,7 +59,7 @@
         "discord": [
           {
             "webhook": "YOUR_WEBHOOK_URL",
-            "message": ":crossed_swords: ${params}"
+            "message": "[[params]]"
           }
         ]
       }
