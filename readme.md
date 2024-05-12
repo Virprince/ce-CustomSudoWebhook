@@ -8,6 +8,12 @@ It's base on the first version of a webhook script provided by Noms for Roleplay
 - I made this script for fun and to answer some needs for a Conan Exiles server i run with friends, you may have to modify it to fit your needs.
 - English is english, so be aware that special characters like `é`,`è`,`â`,`ç`, etc are not returned correctly from sudo and are replaced by `?`. So text in with accent will be full of ?. eg: `Fl?che` instead of `Flêche`.
 
+## How to install
+- Clone the repository or download the zip and extract it in a folder on your webserver.
+- Run `npm install` to install the dependencies or use your hosting provider interface.
+- Start the script with `npm run start` or if your hosting provider ask Application startup file, entry point is `/bin/www`
+- check if the script is running by going to `https://yourserver` you should see a message `Welcome to ce-CustomSudoWebhook`
+
 ## Send chat message to Discord
 First rename the file `/config/chatMessages.json.dist` to `/config/chatMessages.json`then you just modify it with your own webhook url.
 

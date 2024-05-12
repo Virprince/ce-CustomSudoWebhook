@@ -7,6 +7,11 @@ const path = require('path');
 const {getChatMessage, postChatMessage} = require('../features/chatMessage/message.js');
 const {getEventConfig, postMessage} = require('../features/logMessage/message');
 
+
+router.get(`/`, function (req, res, next) {
+    res.send("Welcome to ce-CustomSudoWebhook")
+});
+
 router.get(`/log`, function (req, res, next) {
     const eventConfigs = getEventConfig(req);
     postMessage(req, eventConfigs);
@@ -57,6 +62,10 @@ router.get(`/message`, function (req, res, next) {
         ChunkFilesizeList: {},
         CustomFields: {},
     });
+});
+
+router.use(function (req, res, next) {
+    res.status(404).send("Sorry, page doesn't exist!");
 });
 
 module.exports = router;
