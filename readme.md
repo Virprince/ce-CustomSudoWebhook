@@ -53,7 +53,7 @@ You can set default webhooks for all events. Just add your webhook url in the `e
 ```
 
 ### Configure specific webhook for specific eventId
-To may want to have different webhooks for different eventId and keep your alert in different channel on your discord. 
+You may want to have different webhooks for different eventId and keep your alert in different channel on your discord. 
 You can add a specific section for each eventId you want. Main EventId I use are:
 - `RR_ABILITY_USE` (for abilities that have "log usage" option enabled)
 - `FlowChartLog` (for log from the sudo log node in Tot Admin script)
@@ -196,4 +196,3 @@ Each month a new file will be created.
 
 Every message will be appended to the file with the following format `[date provided by the event] [message] `.
 
-```
