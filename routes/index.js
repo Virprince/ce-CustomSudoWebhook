@@ -9,7 +9,7 @@ const {getEventConfig, postMessage} = require('../features/logMessage/message');
 
 
 router.get(`/`, function (req, res, next) {
-    res.send("Welcome to ce-CustomSudoWebhook")
+    res.render('index');
 });
 
 router.get(`/log`, function (req, res, next) {
@@ -65,7 +65,7 @@ router.get(`/message`, function (req, res, next) {
 });
 
 router.use(function (req, res, next) {
-    res.status(404).send("Sorry, page doesn't exist!");
+    res.status(404).render('404');
 });
 
 module.exports = router;

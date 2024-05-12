@@ -3,8 +3,10 @@ const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
 const indexRouter = require('./routes/index');
+
+app.set('view engine', 'ejs');
+app.use('/assets', express.static('assets'))
 
 app.use(logger('dev'));
 app.use(express.json());
